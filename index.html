@@ -31,80 +31,80 @@
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="#">Carcassonne Shading</a>
           </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li>
-                <div id="saveSVGButton">
-                  <a href="#" class="btn btn-primary btn-sm navbar-btn">
-                    Generate and Save Tileset SVG Files
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+        </div>
       </div>
 
     <div class="container">
 
 
     <div class="col-md-6">
-      <div class="well">
-        <b>Grass</b>
-        <div id="grassColorpicker" class="input-group color-picker">
-          <input id="grass-picker-input" type="text" value="#5367ce" class="form-control add-on" />
-          <span class="input-group-addon"><i></i></span>
-        </div>
-        <br/>
-      
-  
-        <b>Road and Buildings</b>
-        <div id="roadAndBuildingColorpicker" class="input-group color-picker">
-          <input id="grass-picker-input" type="text" value="#5367ce" class="form-control add-on" />
-          <span class="input-group-addon"><i></i></span>
-        </div>
-        <br/>
-  
-        <b>Rooftops</b>
-        <div id="roofsColorpicker" class="input-group color-picker">
-          <input id="grass-picker-input" type="text" value="#5367ce" class="form-control add-on" />
-          <span class="input-group-addon"><i></i></span>
-        </div>
-        <br/>
-  
-        <b>Castle Soil</b>
-        <div id="castleSoilColorpicker" class="input-group color-picker">
-          <input id="grass-picker-input" type="text" value="#5367ce" class="form-control add-on" />
-          <span class="input-group-addon"><i></i></span>
-        </div>
-        <br/>
-  
-        <b>Shrub</b>
-        <div id="shrubColorpicker" class="input-group color-picker">
-          <input id="grass-picker-input" type="text" value="#5367ce" class="form-control add-on" />
-          <span class="input-group-addon"><i></i></span>
-        </div>
-        <br/>
+      <div class="well row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-success" aria-label="Save Settings" data-toggle="modal" data-target="#save-modal">
+            <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save
+          </button>
 
-        <b>Fine edge lines</b>
-        <div id="edgesColorpicker" class="input-group color-picker">
-          <input id="edges-picker-input" type="text" value="#ff0000" class="form-control add-on" />
-          <span class="input-group-addon"><i></i></span>
+          <button type="button" class="btn btn-warning" aria-label="Load Settings" data-toggle="modal" data-target="#load-modal">
+            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Load
+          </button>
         </div>
-        <br/>
+        <div class="col-md-6">
+          <b>Grass</b>
+          <div class="input-group">
+            <input id="grassColorpicker" class="form-control" type="number" min="0" max="255" step="5" value="50">
+          </div>
+          <br/>      
+    
+          <b>Road and Buildings</b>
+          <div class="input-group">
+            <input id="roadAndBuildingColorpicker" class="form-control" type="number" min="0" max="255" step="5" value="50">
+          </div>
+          <br/>
+    
+          <b>Rooftops</b>
+          <div class="input-group">
+            <input id="roofsColorpicker" class="form-control" type="number" min="0" max="255" step="5" value="50">
+          </div>
+          <br/>
+    
+          <b>Castle Soil</b>
+          <div class="input-group">
+            <input id="castleSoilColorpicker" class="form-control" type="number" min="0" max="255" step="5" value="50">
+          </div>
+          <br/>
+    
+          <b>Shrub</b>
+          <div class="input-group">
+            <input id="shrubColorpicker" class="form-control" type="number" min="0" max="255" step="5" value="50">
+          </div>
+          <br/>
+        </div>      
+        <div class="col-md-6">
+          <b>Fine edge lines</b>
+          <div id="edgesColorpicker" class="input-group color-picker">
+            <input id="edges-picker-input" type="text" value="#ff0000" class="form-control add-on" />
+            <span class="input-group-addon"><i></i></span>
+          </div>
+          <br/>
+  
+          <b>Edge cut lines</b>
+          <div id="cutLinesColorpicker" class="input-group color-picker">
+            <input id="cut-lines-picker-input" type="text" value="#0000ff" class="form-control add-on" />
+            <span class="input-group-addon"><i></i></span>
+          </div>
+          <br>
 
-        <b>Edge cut lines</b>
-        <div id="cutLinesColorpicker" class="input-group color-picker">
-          <input id="cut-lines-picker-input" type="text" value="#0000ff" class="form-control add-on" />
-          <span class="input-group-addon"><i></i></span>
+          <b>Border Radius</b>
+          <div class="input-group">
+            <input id="borderRadius" class="form-control" type="number" min="0" max="5" step=".5" value="50">
+          </div>
+          <br>
+
+          <button href="#" class="btn btn-primary">
+            Generate <br> Tileset SVG Files
+          </button>
         </div>
       </div>
     </div>
@@ -144,6 +144,57 @@
       </div>
     </div>
 
+
+    <div id="save-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Save Settings</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+              <b>Name</b>
+              <div class="input-group">
+                <input id="saveSettingsName" class="form-control" type="string">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="saveSettingsButton" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="load-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Load Settings</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <b>Name</b>
+              <div class="input-group">
+                <select id="loadSettingsName" class="form-control" type="string">
+
+                </select>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="loadSettingsButton" data-dismiss="modal">Load</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/bootstrap-colorpicker.js"></script>
@@ -152,5 +203,6 @@
     <script src="./js/FileSaver.js"></script>
     <script src="./js/jszip.js"></script>
     <script src="./js/carcassonne_shading.js"></script>
+    <script src="./js/presets.js"></script>
   </body>
 </html>

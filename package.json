@@ -1,0 +1,19 @@
+{
+  "name": "carcassonne-shading",
+  "version": "1.0.0",
+  "description": "This is some JS that manipulates SVG files used to print or laser-cut tiles for the board game Carcassonne.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomkinsc/carcassonne-shading.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomkinsc/carcassonne-shading/issues"
+  },
+  "homepage": "https://github.com/tomkinsc/carcassonne-shading#readme"
+}
